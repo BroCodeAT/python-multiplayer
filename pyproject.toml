@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "py-mp"
+version = "0.1.0"
+description = ""
+authors = ["dpfurners <dpfurner@tsn.at>"]
+readme = "README.md"
+packages = [{include = "py_mp", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
