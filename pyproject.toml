@@ -1,10 +1,14 @@
 [tool.poetry]
 name = "py-mp"
 version = "0.1.0"
-description = ""
-authors = ["dpfurners <dpfurner@tsn.at>"]
+description = "Server Client Structure for Python"
+authors = [
+    "dpfurners <dpfurner@tsn.at>",
+    "kloaChristoph <christoph.alexander.holas@gmail.com>"
+]
 readme = "README.md"
 packages = [{include = "py_mp", from = "src"}]
+repository = "https://github.com/BroCodeAT/python-multiplayer"
 
 [tool.poetry.dependencies]
 python = "^3.10"
