@@ -1,7 +1,7 @@
 import json
 
-from pygame_multiplayer.models import ClientBase as _ClientBase
-from pygame_multiplayer.commands.flags import CommandFlag as _CommandFlag, NetworkFlag as _NetworkFlag
+from py_mp.models import ClientBase as _ClientBase
+from py_mp.commands.flags import CommandFlag as _CommandFlag, NetworkFlag as _NetworkFlag
 
 
 class BaseCommand:

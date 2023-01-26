@@ -1,5 +1,5 @@
 import socket as _sock
-from pygame_multiplayer.commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand
+from py_mp.commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand
 
 
 class NetworkClientBase:
