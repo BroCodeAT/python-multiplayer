@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "py-mp"
+name = "python-multiplayer"
 version = "0.1.0"
 description = "Server Client Structure for Python"
 authors = [
