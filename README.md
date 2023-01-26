@@ -10,3 +10,4 @@ Is intended to be used for multiplayer games in pygame with this Module.
 ## Planned features
 - [x] Command based Network
 - [ ] Threaded Network
+- [ ] Async Network
