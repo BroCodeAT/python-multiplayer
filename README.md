@@ -1,5 +1,7 @@
 # Python Multiplayer
 
+<a href="https://pypi.org/project/python-multiplayer/0.1.1/"><img src="https://badge.fury.io/py/python-multiplayer.png" alt="PyPI version" height="18"></a>
+
 Framework for Client Server Structure in Python.
 Is intended to be used for multiplayer games in pygame with this Module.
 
