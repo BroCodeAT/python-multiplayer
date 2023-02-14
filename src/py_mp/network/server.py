@@ -1,5 +1,5 @@
 import socket as _sock
-from ..models import ClientBase as _ClientBase
+from ..models import ClientBaseModel as _ClientBase
 from ..commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand, ServerSideClientCommand as _ServerSideClientCommand, ServerSideServerCommand as _ServerSideServerCommand
 
 
@@ -52,7 +52,7 @@ class NetworkServerBase:
 
     def _accept(self, amount: int = 1) -> None:
         """Wrapper of the socket.accept() method including a check if the socket is binded to a host and port
-        
+
         Parameters
         ----------
         amount : int, by default 1

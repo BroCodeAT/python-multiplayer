@@ -1,5 +1,5 @@
-from .network import ClientBase
+from .network import ClientBaseModel
 
 __all__ = [
-    "ClientBase"
+    "ClientBaseModel"
 ]

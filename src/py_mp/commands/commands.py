@@ -1,6 +1,6 @@
 import json
 
-from py_mp.models import ClientBase as _ClientBase
+from py_mp.models import ClientBaseModel as _ClientBase
 from py_mp.commands.flags import CommandFlag as _CommandFlag, NetworkFlag as _NetworkFlag
 
 

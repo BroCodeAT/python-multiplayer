@@ -1,5 +1,6 @@
 import socket as _sock
-from py_mp.commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand
+from py_mp.commands import ClientCommand as _ClientCommand, \
+    ServerCommand as _ServerCommand, BaseCommand as _BaseCommand
 
 
 class NetworkClientBase:
@@ -13,7 +14,7 @@ class NetworkClientBase:
                 Specify the hostname of the server to connect to
             port: int | None, by default None
                 Specify the port to connect to
-            auto_bind: bool, by default True
+            auto_connect: bool, by default True
                 Automatically connect the socket to a port and host
         """
         self.conn: _sock.socket = _sock.socket(_sock.AF_INET, _sock.SOCK_STREAM)

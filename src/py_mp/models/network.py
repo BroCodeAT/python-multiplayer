@@ -3,7 +3,7 @@ import socket as _sock
 
 
 @_dc
-class ClientBase:
+class ClientBaseModel:
     conn: _sock.socket
     address: str
     port: int
