@@ -12,7 +12,6 @@ import sys
 sys.path.insert(0, os.path.abspath('..'))
 
 
-
 project = 'python-multiplayer'
 copyright = '2023, BroCodeAT'
 author = 'BroCodeAT'
