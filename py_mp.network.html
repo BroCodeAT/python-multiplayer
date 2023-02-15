@@ -1,124 +1,1219 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="py_mp.models package" href="py_mp.models.html" />
 
-<!DOCTYPE html>
+    <!-- Generated with Sphinx 6.1.3 and Furo 2022.12.07 -->
+        <title>py_mp.network package - python-multiplayer 0.1.2 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    
+    
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>py_mp.network package &#8212; python-multiplayer 0.1.2 documentation</title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="py_mp.models package" href="py_mp.models.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
-  </head><body>
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
   
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
 
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-          <div class="body" role="main">
-            
-  <section id="py-mp-network-package">
-<h1>py_mp.network package<a class="headerlink" href="#py-mp-network-package" title="Permalink to this heading">¶</a></h1>
-<section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="py-mp-network-client-module">
-<h2>py_mp.network.client module<a class="headerlink" href="#py-mp-network-client-module" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="py-mp-network-server-module">
-<h2>py_mp.network.server module<a class="headerlink" href="#py-mp-network-server-module" title="Permalink to this heading">¶</a></h2>
-</section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Permalink to this heading">¶</a></h2>
-</section>
-</section>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
 
 
-          </div>
-          
-        </div>
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">python-multiplayer 0.1.2 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-<h1 class="logo"><a href="index.html">python-multiplayer</a></h1>
-
-
-
-
-
-
-
-
-<h3>Navigation</h3>
-<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">python-multiplayer 0.1.2 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="py_mp.html">py_mp package</a><ul class="current">
-<li class="toctree-l2 current"><a class="reference internal" href="py_mp.html#subpackages">Subpackages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="py_mp.html#module-contents">Module contents</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="py_mp.html">py_mp package</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="py_mp.commands.html">py_mp.commands package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="py_mp.models.html">py_mp.models package</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">py_mp.network package</a></li>
 </ul>
 </li>
 </ul>
 
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-  <li><a href="py_mp.html">py_mp package</a><ul>
-      <li>Previous: <a href="py_mp.models.html" title="previous chapter">py_mp.models package</a></li>
-  </ul></li>
-  </ul></li>
-</ul>
 </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Quick search</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
+</div>
+
+      </div>
+      
     </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="py-mp-network-package">
+<h1>py_mp.network package<a class="headerlink" href="#py-mp-network-package" title="Permalink to this heading">#</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
+</section>
+<section id="module-py_mp.network.client">
+<span id="py-mp-network-client-module"></span><h2>py_mp.network.client module<a class="headerlink" href="#module-py_mp.network.client" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.client.CommandClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.client.</span></span><span class="sig-name descname"><span class="pre">CommandClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.CommandClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.client.NetworkClient" title="py_mp.network.client.NetworkClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkClient</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.client.CommandClient.recv" title="py_mp.network.client.CommandClient.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>()</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.client.CommandClient.send" title="py_mp.network.client.CommandClient.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(command)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+</tbody>
+</table>
 </div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.CommandClient.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.CommandClient.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.CommandClient.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ClientCommand" title="py_mp.commands.commands.ClientCommand"><span class="pre">ClientCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.CommandClient.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+</dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.client.</span></span><span class="sig-name descname"><span class="pre">NetworkClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.client.NetworkClientBase" title="py_mp.network.client.NetworkClientBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkClientBase</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.client.NetworkClient.recv" title="py_mp.network.client.NetworkClient.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>()</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.client.NetworkClient.send" title="py_mp.network.client.NetworkClient.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(data)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClient.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClient.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClient.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClient.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">bytes</span></dt><dd><p>The data to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+</dd></dl>
 
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClientBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.client.</span></span><span class="sig-name descname"><span class="pre">NetworkClientBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_connect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClientBase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.client.NetworkClientBase.connect" title="py_mp.network.client.NetworkClientBase.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.client.NetworkClientBase.is_connected" title="py_mp.network.client.NetworkClientBase.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code></a>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClientBase.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClientBase.connect" title="Permalink to this definition">#</a></dt>
+<dd><p>Connect the socket to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The Hostname or IP address of the server to connect to</p>
+</dd>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The Port of the server to connect to</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>socket.socket</dt><dd><p>The socket object that is connected to the given host and port</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.client.NetworkClientBase.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase.is_connected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.client.NetworkClientBase.is_connected" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the socket is connected to a host and port (server)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the socket is connected to a host and port, False if not</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
+</dd></dl>
+
+</section>
+<section id="module-py_mp.network.server">
+<span id="py-mp-network-server-module"></span><h2>py_mp.network.server module<a class="headerlink" href="#module-py_mp.network.server" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.server.CommandServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.server.</span></span><span class="sig-name descname"><span class="pre">CommandServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.CommandServer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.server.NetworkServer" title="py_mp.network.server.NetworkServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkServer</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">accept</span></code>([amount])</p></td>
+<td><p>Accept a client</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.server.CommandServer.recv" title="py_mp.network.server.CommandServer.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>(client)</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.CommandServer.send" title="py_mp.network.server.CommandServer.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(command, client)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.server.CommandServer.send_all" title="py_mp.network.server.CommandServer.send_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_all</span></code></a>(command)</p></td>
+<td><p>Send data to all clients</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.CommandServer.send_to" title="py_mp.network.server.CommandServer.send_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_to</span></code></a>(command, *clients)</p></td>
+<td><p>Send data to several clients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.CommandServer.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideClientCommand" title="py_mp.commands.commands.ServerSideClientCommand"><span class="pre">ServerSideClientCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.CommandServer.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to receive the data from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.CommandServer.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.CommandServer.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.CommandServer.send_all">
+<span class="sig-name descname"><span class="pre">send_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.CommandServer.send_all" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to all clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.CommandServer.send_to">
+<span class="sig-name descname"><span class="pre">send_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.CommandServer.send_to" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to several clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ServerCommand | ServerSideServerCommand</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>clients</strong><span class="classifier">list[ClientBase]</span></dt><dd><p>The clients to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.server.</span></span><span class="sig-name descname"><span class="pre">NetworkServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.server.NetworkServerBase" title="py_mp.network.server.NetworkServerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServer.accept" title="py_mp.network.server.NetworkServer.accept"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accept</span></code></a>([amount])</p></td>
+<td><p>Accept a client</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServer.recv" title="py_mp.network.server.NetworkServer.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>(client)</p></td>
+<td><p>Receive data from a specific client</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServer.send" title="py_mp.network.server.NetworkServer.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(data, client)</p></td>
+<td><p>Send data to a specific client</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServer.send_all" title="py_mp.network.server.NetworkServer.send_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_all</span></code></a>(data)</p></td>
+<td><p>Send data to all clients</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServer.send_to" title="py_mp.network.server.NetworkServer.send_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_to</span></code></a>(data, *clients)</p></td>
+<td><p>Send data to several clients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.accept"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer.accept" title="Permalink to this definition">#</a></dt>
+<dd><p>Accept a client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>amount</strong><span class="classifier">int, by default 1</span></dt><dd><p>The amount of clients to accept</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from a specific client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to receive the data from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to a specific client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">bytes</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer.send_all">
+<span class="sig-name descname"><span class="pre">send_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer.send_all" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to all clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">str</span></dt><dd><p>The data to send to the client</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServer.send_to">
+<span class="sig-name descname"><span class="pre">send_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServer.send_to" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to several clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">str</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>clients</strong><span class="classifier">list[ClientBase]</span></dt><dd><p>The clients to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServerBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.server.</span></span><span class="sig-name descname"><span class="pre">NetworkServerBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServerBase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServerBase.bind" title="py_mp.network.server.NetworkServerBase.bind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code></a>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.server.NetworkServerBase.is_binded" title="py_mp.network.server.NetworkServerBase.is_binded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code></a>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServerBase.bind">
+<span class="sig-name descname"><span class="pre">bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">socket</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase.bind"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServerBase.bind" title="Permalink to this definition">#</a></dt>
+<dd><p>Bind the socket to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The Hostname or IP address to bind the server to</p>
+</dd>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The Port to bind the server to</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>socket.socket</dt><dd><p>The socket object that is binded to the given host and port</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.server.NetworkServerBase.is_binded">
+<span class="sig-name descname"><span class="pre">is_binded</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase.is_binded"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.server.NetworkServerBase.is_binded" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the socket is binded to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the socket is binded to a host and port, False if not</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-py_mp.network">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-py_mp.network" title="Permalink to this heading">#</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.CommandClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">CommandClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.client.NetworkClient" title="py_mp.network.client.NetworkClient"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkClient</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.CommandClient.recv" title="py_mp.network.CommandClient.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>()</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.CommandClient.send" title="py_mp.network.CommandClient.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(command)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandClient.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandClient.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandClient.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ClientCommand" title="py_mp.commands.commands.ClientCommand"><span class="pre">ClientCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#CommandClient.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandClient.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.CommandServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">CommandServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandServer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.server.NetworkServer" title="py_mp.network.server.NetworkServer"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkServer</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">accept</span></code>([amount])</p></td>
+<td><p>Accept a client</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.CommandServer.recv" title="py_mp.network.CommandServer.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>(client)</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.CommandServer.send" title="py_mp.network.CommandServer.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(command, client)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.CommandServer.send_all" title="py_mp.network.CommandServer.send_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_all</span></code></a>(command)</p></td>
+<td><p>Send data to all clients</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.CommandServer.send_to" title="py_mp.network.CommandServer.send_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_to</span></code></a>(command, *clients)</p></td>
+<td><p>Send data to several clients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandServer.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideClientCommand" title="py_mp.commands.commands.ServerSideClientCommand"><span class="pre">ServerSideClientCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandServer.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to receive the data from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandServer.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandServer.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandServer.send_all">
+<span class="sig-name descname"><span class="pre">send_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandServer.send_all" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to all clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ClientCommand | ServerCommand</span></dt><dd><p>The command to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.CommandServer.send_to">
+<span class="sig-name descname"><span class="pre">send_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand" title="py_mp.commands.commands.ServerSideServerCommand"><span class="pre">ServerSideServerCommand</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#CommandServer.send_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.CommandServer.send_to" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to several clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>command</strong><span class="classifier">ServerCommand | ServerSideServerCommand</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>clients</strong><span class="classifier">list[ClientBase]</span></dt><dd><p>The clients to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClient">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">NetworkClient</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClient" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.client.NetworkClientBase" title="py_mp.network.client.NetworkClientBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkClientBase</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkClient.recv" title="py_mp.network.NetworkClient.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>()</p></td>
+<td><p>Receive data from the server</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.NetworkClient.send" title="py_mp.network.NetworkClient.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(data)</p></td>
+<td><p>Send data to the server</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClient.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClient.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClient.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClient.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClient.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to the server</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">bytes</span></dt><dd><p>The data to send to the server</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClientBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">NetworkClientBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_connect</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClientBase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkClientBase.connect" title="py_mp.network.NetworkClientBase.connect"><code class="xref py py-obj docutils literal notranslate"><span class="pre">connect</span></code></a>(host, port)</p></td>
+<td><p>Connect the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.NetworkClientBase.is_connected" title="py_mp.network.NetworkClientBase.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code></a>()</p></td>
+<td><p>Check if the socket is connected to a host and port (server)</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClientBase.connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase.connect"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClientBase.connect" title="Permalink to this definition">#</a></dt>
+<dd><p>Connect the socket to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The Hostname or IP address of the server to connect to</p>
+</dd>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The Port of the server to connect to</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>socket.socket</dt><dd><p>The socket object that is connected to the given host and port</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkClientBase.is_connected">
+<span class="sig-name descname"><span class="pre">is_connected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/py_mp/network/client.html#NetworkClientBase.is_connected"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkClientBase.is_connected" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the socket is connected to a host and port (server)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the socket is connected to a host and port, False if not</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">NetworkServer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#py_mp.network.server.NetworkServerBase" title="py_mp.network.server.NetworkServerBase"><code class="xref py py-class docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkServer.accept" title="py_mp.network.NetworkServer.accept"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accept</span></code></a>([amount])</p></td>
+<td><p>Accept a client</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.NetworkServer.recv" title="py_mp.network.NetworkServer.recv"><code class="xref py py-obj docutils literal notranslate"><span class="pre">recv</span></code></a>(client)</p></td>
+<td><p>Receive data from a specific client</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkServer.send" title="py_mp.network.NetworkServer.send"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send</span></code></a>(data, client)</p></td>
+<td><p>Send data to a specific client</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.NetworkServer.send_all" title="py_mp.network.NetworkServer.send_all"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_all</span></code></a>(data)</p></td>
+<td><p>Send data to all clients</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkServer.send_to" title="py_mp.network.NetworkServer.send_to"><code class="xref py py-obj docutils literal notranslate"><span class="pre">send_to</span></code></a>(data, *clients)</p></td>
+<td><p>Send data to several clients</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amount</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.accept"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer.accept" title="Permalink to this definition">#</a></dt>
+<dd><p>Accept a client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>amount</strong><span class="classifier">int, by default 1</span></dt><dd><p>The amount of clients to accept</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer.recv">
+<span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.recv"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer.recv" title="Permalink to this definition">#</a></dt>
+<dd><p>Receive data from a specific client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to receive the data from</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The received data</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer.send">
+<span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer.send" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to a specific client</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">bytes</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>client</strong><span class="classifier">ClientBase</span></dt><dd><p>The client to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer.send_all">
+<span class="sig-name descname"><span class="pre">send_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer.send_all" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to all clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">str</span></dt><dd><p>The data to send to the client</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServer.send_to">
+<span class="sig-name descname"><span class="pre">send_to</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">clients</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServer.send_to"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServer.send_to" title="Permalink to this definition">#</a></dt>
+<dd><p>Send data to several clients</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>data</strong><span class="classifier">str</span></dt><dd><p>The data to send to the client</p>
+</dd>
+<dt><strong>clients</strong><span class="classifier">list[ClientBase]</span></dt><dd><p>The clients to send the data to</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServerBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.network.</span></span><span class="sig-name descname"><span class="pre">NetworkServerBase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_bind</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServerBase" title="Permalink to this definition">#</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<div class="table-wrapper autosummary longtable docutils container">
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_mp.network.NetworkServerBase.bind" title="py_mp.network.NetworkServerBase.bind"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bind</span></code></a>(host, port)</p></td>
+<td><p>Bind the socket to a host and port</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#py_mp.network.NetworkServerBase.is_binded" title="py_mp.network.NetworkServerBase.is_binded"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_binded</span></code></a>()</p></td>
+<td><p>Check if the socket is binded to a host and port</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServerBase.bind">
+<span class="sig-name descname"><span class="pre">bind</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">socket</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase.bind"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServerBase.bind" title="Permalink to this definition">#</a></dt>
+<dd><p>Bind the socket to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>host</strong><span class="classifier">str</span></dt><dd><p>The Hostname or IP address to bind the server to</p>
+</dd>
+<dt><strong>port</strong><span class="classifier">int</span></dt><dd><p>The Port to bind the server to</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>socket.socket</dt><dd><p>The socket object that is binded to the given host and port</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="py_mp.network.NetworkServerBase.is_binded">
+<span class="sig-name descname"><span class="pre">is_binded</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/py_mp/network/server.html#NetworkServerBase.is_binded"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.network.NetworkServerBase.is_binded" title="Permalink to this definition">#</a></dt>
+<dd><p>Check if the socket is binded to a host and port</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>bool</dt><dd><p>True if the socket is binded to a host and port, False if not</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="py_mp.models.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">py_mp.models package</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2023, BroCodeAT
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">py_mp.network package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-py_mp.network.client">py_mp.network.client module</a><ul>
+<li><a class="reference internal" href="#py_mp.network.client.CommandClient"><code class="docutils literal notranslate"><span class="pre">CommandClient</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.client.CommandClient.recv"><code class="docutils literal notranslate"><span class="pre">CommandClient.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.client.CommandClient.send"><code class="docutils literal notranslate"><span class="pre">CommandClient.send()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClient"><code class="docutils literal notranslate"><span class="pre">NetworkClient</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClient.recv"><code class="docutils literal notranslate"><span class="pre">NetworkClient.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClient.send"><code class="docutils literal notranslate"><span class="pre">NetworkClient.send()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClientBase"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClientBase.connect"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.connect()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.client.NetworkClientBase.is_connected"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.is_connected()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-py_mp.network.server">py_mp.network.server module</a><ul>
+<li><a class="reference internal" href="#py_mp.network.server.CommandServer"><code class="docutils literal notranslate"><span class="pre">CommandServer</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.server.CommandServer.recv"><code class="docutils literal notranslate"><span class="pre">CommandServer.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.CommandServer.send"><code class="docutils literal notranslate"><span class="pre">CommandServer.send()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.CommandServer.send_all"><code class="docutils literal notranslate"><span class="pre">CommandServer.send_all()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.CommandServer.send_to"><code class="docutils literal notranslate"><span class="pre">CommandServer.send_to()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer"><code class="docutils literal notranslate"><span class="pre">NetworkServer</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer.accept"><code class="docutils literal notranslate"><span class="pre">NetworkServer.accept()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer.recv"><code class="docutils literal notranslate"><span class="pre">NetworkServer.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer.send"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer.send_all"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send_all()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServer.send_to"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send_to()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServerBase"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServerBase.bind"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.bind()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.server.NetworkServerBase.is_binded"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.is_binded()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-py_mp.network">Module contents</a><ul>
+<li><a class="reference internal" href="#py_mp.network.CommandClient"><code class="docutils literal notranslate"><span class="pre">CommandClient</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.CommandClient.recv"><code class="docutils literal notranslate"><span class="pre">CommandClient.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.CommandClient.send"><code class="docutils literal notranslate"><span class="pre">CommandClient.send()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.CommandServer"><code class="docutils literal notranslate"><span class="pre">CommandServer</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.CommandServer.recv"><code class="docutils literal notranslate"><span class="pre">CommandServer.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.CommandServer.send"><code class="docutils literal notranslate"><span class="pre">CommandServer.send()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.CommandServer.send_all"><code class="docutils literal notranslate"><span class="pre">CommandServer.send_all()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.CommandServer.send_to"><code class="docutils literal notranslate"><span class="pre">CommandServer.send_to()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.NetworkClient"><code class="docutils literal notranslate"><span class="pre">NetworkClient</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.NetworkClient.recv"><code class="docutils literal notranslate"><span class="pre">NetworkClient.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkClient.send"><code class="docutils literal notranslate"><span class="pre">NetworkClient.send()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.NetworkClientBase"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.NetworkClientBase.connect"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.connect()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkClientBase.is_connected"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.is_connected()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer"><code class="docutils literal notranslate"><span class="pre">NetworkServer</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer.accept"><code class="docutils literal notranslate"><span class="pre">NetworkServer.accept()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer.recv"><code class="docutils literal notranslate"><span class="pre">NetworkServer.recv()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer.send"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer.send_all"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send_all()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServer.send_to"><code class="docutils literal notranslate"><span class="pre">NetworkServer.send_to()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServerBase"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a><ul>
+<li><a class="reference internal" href="#py_mp.network.NetworkServerBase.bind"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.bind()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.network.NetworkServerBase.is_binded"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.is_binded()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
         </div>
       </div>
-      <div class="clearer"></div>
-    </div>
-    <div class="footer">
-      &copy;2023, BroCodeAT.
       
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 6.1.3</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
       
-      |
-      <a href="_sources/py_mp.network.rst.txt"
-          rel="nofollow">Page source</a>
-    </div>
-
-    
-
-    
-  </body>
+    </aside>
+  </div>
+</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/scripts/furo.js"></script>
+    </body>
 </html>
