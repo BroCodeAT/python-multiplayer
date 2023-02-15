@@ -1,6 +1,6 @@
 import socket as _sock
-from ..models import ClientBaseModel as _ClientBase
-from ..commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand, ServerSideClientCommand as _ServerSideClientCommand, ServerSideServerCommand as _ServerSideServerCommand
+from py_mp.models import ClientBaseModel as _ClientBase
+from py_mp.commands import ClientCommand as _ClientCommand, ServerCommand as _ServerCommand, BaseCommand as _BaseCommand, ServerSideClientCommand as _ServerSideClientCommand, ServerSideServerCommand as _ServerSideServerCommand
 
 
 class NetworkServerBase:
@@ -274,3 +274,15 @@ class CommandServer(NetworkServer):
             The received data
         """
         return _ServerSideClientCommand.from_client_cmd(_BaseCommand.deserialize(super().recv(client)), client)
+
+
+if __name__ == '__main__':
+    from py_mp.commands import ServerSideServerCommand, NetworkFlag
+
+    server = CommandServer("localhost", 1234)
+    server.accept(2)
+
+    print(server.recv(server.clients[0]))
+    print(server.recv(server.clients[1]))
+    server.send(ServerSideServerCommand(NetworkFlag.CONNECTED, server.clients[0]), server.clients[0])
+    server.send(ServerSideServerCommand(NetworkFlag.CONNECTED, server.clients[1]), server.clients[1])

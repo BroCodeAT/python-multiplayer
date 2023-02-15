@@ -167,3 +167,11 @@ class CommandClient(NetworkClient):
             The received data
         """
         return _BaseCommand.deserialize(super().recv())
+
+
+if __name__ == '__main__':
+    from py_mp.commands import NetworkFlag
+
+    client = CommandClient("localhost", 1234)
+    client.send(_ClientCommand(NetworkFlag.CONNECTED, test="test"))
+    print(client.recv())
