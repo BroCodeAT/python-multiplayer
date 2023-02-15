@@ -2,7 +2,7 @@ name: Docs2Pages
 
 on: [push]
 
-permissions: read-all/write-all
+permissions: write-all
 
 
 jobs:
