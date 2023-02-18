@@ -1,0 +1,63 @@
+:orphan:
+
+py_mp.commands.commands
+=======================
+
+.. py:module:: py_mp.commands.commands
+
+
+Module Contents
+---------------
+
+.. py:class:: ClientCommand(flag, **kwargs)
+
+   Bases: :py:obj:`BaseCommand`
+
+   
+   Client-Side (Client) Command
+
+   Instance that reprs a command that is sent from the client to the server
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: ServerCommand(flag, **kwargs)
+
+   Bases: :py:obj:`BaseCommand`
+
+   
+   Client-Side (Server) Command
+
+   Instance that reprs a command that is sent from the server to the client
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

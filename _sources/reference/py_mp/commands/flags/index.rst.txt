@@ -1,0 +1,62 @@
+:orphan:
+
+py_mp.commands.flags
+====================
+
+.. py:module:: py_mp.commands.flags
+
+
+Module Contents
+---------------
+
+.. py:class:: CommandFlag
+
+   Bases: :py:obj:`enum.IntFlag`
+
+   
+   Support for integer-based Flags
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+
+.. py:class:: NetworkFlag
+
+   Bases: :py:obj:`CommandFlag`
+
+   
+   Flags for the Network Commands
+   Reserved Flags: 100 - 199
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   ..
+       !! processed by numpydoc !!
+

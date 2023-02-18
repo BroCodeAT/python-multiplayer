@@ -9,6 +9,7 @@
         <title>py_mp.commands package - python-multiplayer 0.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -205,7 +206,7 @@
 <span id="py-mp-commands-commands-module"></span><h2>py_mp.commands.commands module<a class="headerlink" href="#module-py_mp.commands.commands" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.commands.BaseCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">BaseCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">BaseCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -222,7 +223,7 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.commands.BaseCommand.deserialize">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.deserialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand.deserialize" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.deserialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand.deserialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Deserializes a string into a command</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -242,7 +243,7 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.commands.BaseCommand.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.serialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand.serialize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.serialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.BaseCommand.serialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Serializes the command into a string</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -258,7 +259,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ClientCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ClientCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ClientCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p>Client-Side (Client) Command</p>
 <p>Instance that reprs a command that is sent from the client to the server</p>
@@ -279,7 +280,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ServerCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p>Client-Side (Server) Command</p>
 <p>Instance that reprs a command that is sent from the server to the client</p>
@@ -300,7 +301,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ServerSideClientCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideClientCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideClientCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -320,7 +321,7 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ServerSideClientCommand.from_client_cmd">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_client_cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.ServerSideClientCommand" title="py_mp.commands.commands.ServerSideClientCommand"><span class="pre">ServerSideClientCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand.from_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideClientCommand.from_client_cmd" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_client_cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand.from_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideClientCommand.from_client_cmd" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ServerSideClientCommand from a ClientCommand</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -344,7 +345,7 @@
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ServerSideServerCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideServerCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideServerCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -364,7 +365,7 @@
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.commands.ServerSideServerCommand.to_client_cmd">
-<span class="sig-name descname"><span class="pre">to_client_cmd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand.to_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_client_cmd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand.to_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ServerCommand from a ServerSideServerCommand</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -391,17 +392,17 @@
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.flags.NetworkFlag">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.flags.</span></span><span class="sig-name descname"><span class="pre">NetworkFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/flags.html#NetworkFlag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.flags.NetworkFlag" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandFlag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="reference/py_mp/commands/flags/index.html#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandFlag</span></code></a></p>
 <p>Flags for the Network Commands
 Reserved Flags: 100 - 199</p>
 <dl class="py attribute">
 <dt class="sig sig-object py" id="py_mp.commands.flags.NetworkFlag.CONNECTED">
-<span class="sig-name descname"><span class="pre">CONNECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">101</span></em><a class="headerlink" href="#py_mp.commands.flags.NetworkFlag.CONNECTED" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">CONNECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">101</span></em><a class="reference internal" href="_modules/py_mp/commands/flags.html#NetworkFlag.CONNECTED"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.flags.NetworkFlag.CONNECTED" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 <dl class="py attribute">
 <dt class="sig sig-object py" id="py_mp.commands.flags.NetworkFlag.DISCONNECTED">
-<span class="sig-name descname"><span class="pre">DISCONNECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="headerlink" href="#py_mp.commands.flags.NetworkFlag.DISCONNECTED" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">DISCONNECTED</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">100</span></em><a class="reference internal" href="_modules/py_mp/commands/flags.html#NetworkFlag.DISCONNECTED"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.flags.NetworkFlag.DISCONNECTED" title="Permalink to this definition">#</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -411,7 +412,7 @@ Reserved Flags: 100 - 199</p>
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-py_mp.commands" title="Permalink to this heading">#</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.BaseCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">BaseCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.BaseCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">BaseCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.BaseCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -428,7 +429,7 @@ Reserved Flags: 100 - 199</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.BaseCommand.deserialize">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.deserialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.BaseCommand.deserialize" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">serial</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_mp.commands.BaseCommand.deserialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Deserializes a string into a command</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -448,7 +449,7 @@ Reserved Flags: 100 - 199</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.BaseCommand.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#BaseCommand.serialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.BaseCommand.serialize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_mp.commands.BaseCommand.serialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Serializes the command into a string</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -464,7 +465,7 @@ Reserved Flags: 100 - 199</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.ClientCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ClientCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ClientCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p>Client-Side (Client) Command</p>
 <p>Instance that reprs a command that is sent from the client to the server</p>
@@ -493,7 +494,7 @@ Reserved Flags: 100 - 199</p>
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.NetworkFlag">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">NetworkFlag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/flags.html#NetworkFlag"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.NetworkFlag" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandFlag</span></code></a></p>
+<dd><p>Bases: <a class="reference internal" href="reference/py_mp/commands/flags/index.html#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><code class="xref py py-class docutils literal notranslate"><span class="pre">CommandFlag</span></code></a></p>
 <p>Flags for the Network Commands
 Reserved Flags: 100 - 199</p>
 <dl class="py attribute">
@@ -510,7 +511,7 @@ Reserved Flags: 100 - 199</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.ServerCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p>Client-Side (Server) Command</p>
 <p>Instance that reprs a command that is sent from the server to the client</p>
@@ -531,7 +532,7 @@ Reserved Flags: 100 - 199</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.ServerSideClientCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideClientCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideClientCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideClientCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -551,7 +552,7 @@ Reserved Flags: 100 - 199</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.ServerSideClientCommand.from_client_cmd">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_client_cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><span class="pre">BaseCommand</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.ServerSideClientCommand" title="py_mp.commands.commands.ServerSideClientCommand"><span class="pre">ServerSideClientCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideClientCommand.from_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideClientCommand.from_client_cmd" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_client_cmd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#py_mp.commands.ServerSideClientCommand.from_client_cmd" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ServerSideClientCommand from a ClientCommand</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -575,7 +576,7 @@ Reserved Flags: 100 - 199</p>
 
 <dl class="py class">
 <dt class="sig sig-object py" id="py_mp.commands.ServerSideServerCommand">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#py_mp.commands.flags.CommandFlag" title="py_mp.commands.flags.CommandFlag"><span class="pre">CommandFlag</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel" title="py_mp.models.network.ClientBaseModel"><span class="pre">ClientBaseModel</span></a></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideServerCommand" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">py_mp.commands.</span></span><span class="sig-name descname"><span class="pre">ServerSideServerCommand</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">flag</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideServerCommand" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#py_mp.commands.commands.BaseCommand" title="py_mp.commands.commands.BaseCommand"><code class="xref py py-class docutils literal notranslate"><span class="pre">BaseCommand</span></code></a></p>
 <p class="rubric">Methods</p>
 <div class="table-wrapper autosummary longtable docutils container">
@@ -595,7 +596,7 @@ Reserved Flags: 100 - 199</p>
 </div>
 <dl class="py method">
 <dt class="sig sig-object py" id="py_mp.commands.ServerSideServerCommand.to_client_cmd">
-<span class="sig-name descname"><span class="pre">to_client_cmd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#py_mp.commands.commands.ServerCommand" title="py_mp.commands.commands.ServerCommand"><span class="pre">ServerCommand</span></a></span></span><a class="reference internal" href="_modules/py_mp/commands/commands.html#ServerSideServerCommand.to_client_cmd"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_mp.commands.ServerSideServerCommand.to_client_cmd" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">to_client_cmd</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#py_mp.commands.ServerSideServerCommand.to_client_cmd" title="Permalink to this definition">#</a></dt>
 <dd><p>Creates a ServerCommand from a ServerSideServerCommand</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
@@ -683,6 +684,10 @@ Reserved Flags: 100 - 199</p>
 </li>
 <li><a class="reference internal" href="#py_mp.commands.commands.ServerSideServerCommand"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand</span></code></a><ul>
 <li><a class="reference internal" href="#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand.to_client_cmd()</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.BaseCommand.deserialize">deserialize</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.BaseCommand.serialize">serialize</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ServerSideClientCommand.from_client_cmd">from_client_cmd</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd">to_client_cmd</a></li>
 </ul>
 </li>
 </ul>
@@ -692,6 +697,8 @@ Reserved Flags: 100 - 199</p>
 <li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag"><code class="docutils literal notranslate"><span class="pre">NetworkFlag</span></code></a><ul>
 <li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag.CONNECTED"><code class="docutils literal notranslate"><span class="pre">NetworkFlag.CONNECTED</span></code></a></li>
 <li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag.DISCONNECTED"><code class="docutils literal notranslate"><span class="pre">NetworkFlag.DISCONNECTED</span></code></a></li>
+<li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag.CONNECTED">CONNECTED</a></li>
+<li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag.DISCONNECTED">DISCONNECTED</a></li>
 </ul>
 </li>
 </ul>
@@ -716,6 +723,34 @@ Reserved Flags: 100 - 199</p>
 </li>
 <li><a class="reference internal" href="#py_mp.commands.ServerSideServerCommand"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand</span></code></a><ul>
 <li><a class="reference internal" href="#py_mp.commands.ServerSideServerCommand.to_client_cmd"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand.to_client_cmd()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.commands.commands.BaseCommand">BaseCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ClientCommand">ClientCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ServerCommand">ServerCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ServerSideClientCommand">ServerSideClientCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.commands.ServerSideServerCommand">ServerSideServerCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.flags.CommandFlag">CommandFlag</a></li>
+<li><a class="reference internal" href="#py_mp.commands.flags.NetworkFlag">NetworkFlag</a></li>
+<li><a class="reference internal" href="#py_mp.commands.BaseCommand">BaseCommand</a><ul>
+<li><a class="reference internal" href="#py_mp.commands.BaseCommand.deserialize">deserialize</a></li>
+<li><a class="reference internal" href="#py_mp.commands.BaseCommand.serialize">serialize</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.commands.ClientCommand">ClientCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.CommandFlag">CommandFlag</a></li>
+<li><a class="reference internal" href="#py_mp.commands.NetworkFlag">NetworkFlag</a><ul>
+<li><a class="reference internal" href="#py_mp.commands.NetworkFlag.CONNECTED">CONNECTED</a></li>
+<li><a class="reference internal" href="#py_mp.commands.NetworkFlag.DISCONNECTED">DISCONNECTED</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.commands.ServerCommand">ServerCommand</a></li>
+<li><a class="reference internal" href="#py_mp.commands.ServerSideClientCommand">ServerSideClientCommand</a><ul>
+<li><a class="reference internal" href="#py_mp.commands.ServerSideClientCommand.from_client_cmd">from_client_cmd</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#py_mp.commands.ServerSideServerCommand">ServerSideServerCommand</a><ul>
+<li><a class="reference internal" href="#py_mp.commands.ServerSideServerCommand.to_client_cmd">to_client_cmd</a></li>
 </ul>
 </li>
 </ul>

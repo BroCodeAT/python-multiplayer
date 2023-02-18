@@ -9,6 +9,7 @@
         <title>py_mp package - python-multiplayer 0.1.2 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -218,6 +219,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand.to_client_cmd()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.BaseCommand.deserialize">deserialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.BaseCommand.serialize">serialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideClientCommand.from_client_cmd">from_client_cmd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand.to_client_cmd">to_client_cmd</a></li>
 </ul>
 </li>
 </ul>
@@ -227,6 +232,8 @@
 <li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag"><code class="docutils literal notranslate"><span class="pre">NetworkFlag</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag.CONNECTED"><code class="docutils literal notranslate"><span class="pre">NetworkFlag.CONNECTED</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag.DISCONNECTED"><code class="docutils literal notranslate"><span class="pre">NetworkFlag.DISCONNECTED</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag.CONNECTED">CONNECTED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag.DISCONNECTED">DISCONNECTED</a></li>
 </ul>
 </li>
 </ul>
@@ -253,6 +260,34 @@
 <li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerSideServerCommand.to_client_cmd"><code class="docutils literal notranslate"><span class="pre">ServerSideServerCommand.to_client_cmd()</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.BaseCommand">BaseCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ClientCommand">ClientCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerCommand">ServerCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideClientCommand">ServerSideClientCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.commands.ServerSideServerCommand">ServerSideServerCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.CommandFlag">CommandFlag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.flags.NetworkFlag">NetworkFlag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.BaseCommand">BaseCommand</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.BaseCommand.deserialize">deserialize</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.BaseCommand.serialize">serialize</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ClientCommand">ClientCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.CommandFlag">CommandFlag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.NetworkFlag">NetworkFlag</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.NetworkFlag.CONNECTED">CONNECTED</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.NetworkFlag.DISCONNECTED">DISCONNECTED</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerCommand">ServerCommand</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerSideClientCommand">ServerSideClientCommand</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerSideClientCommand.from_client_cmd">from_client_cmd</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerSideServerCommand">ServerSideServerCommand</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.commands.html#py_mp.commands.ServerSideServerCommand.to_client_cmd">to_client_cmd</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -265,6 +300,10 @@
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.conn"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.conn</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.from_accept"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.from_accept()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.port"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.port</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.address">address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.conn">conn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.from_accept">from_accept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel.port">port</a></li>
 </ul>
 </li>
 </ul>
@@ -275,6 +314,14 @@
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.conn"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.conn</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.from_accept"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.from_accept()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.port"><code class="docutils literal notranslate"><span class="pre">ClientBaseModel.port</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.models.html#py_mp.models.network.ClientBaseModel">ClientBaseModel</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel">ClientBaseModel</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.address">address</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.conn">conn</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.from_accept">from_accept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.models.html#py_mp.models.ClientBaseModel.port">port</a></li>
 </ul>
 </li>
 </ul>
@@ -297,6 +344,12 @@
 <li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase.connect"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.connect()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase.is_connected"><code class="docutils literal notranslate"><span class="pre">NetworkClientBase.is_connected()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.CommandClient.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.CommandClient.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClient.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClient.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase.connect">connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase.is_connected">is_connected</a></li>
 </ul>
 </li>
 </ul>
@@ -320,6 +373,17 @@
 <li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase.bind"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.bind()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase.is_binded"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.is_binded()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.CommandServer.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.CommandServer.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.CommandServer.send_all">send_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.CommandServer.send_to">send_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer.accept">accept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer.send_all">send_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer.send_to">send_to</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase.bind">bind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase.is_binded">is_binded</a></li>
 </ul>
 </li>
 </ul>
@@ -358,6 +422,47 @@
 <li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase.bind"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.bind()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase.is_binded"><code class="docutils literal notranslate"><span class="pre">NetworkServerBase.is_binded()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.CommandClient">CommandClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClient">NetworkClient</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.client.NetworkClientBase">NetworkClientBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.CommandServer">CommandServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServer">NetworkServer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.server.NetworkServerBase">NetworkServerBase</a></li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandClient">CommandClient</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandClient.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandClient.send">send</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandServer">CommandServer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandServer.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandServer.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandServer.send_all">send_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.CommandServer.send_to">send_to</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClient">NetworkClient</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClient.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClient.send">send</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClientBase">NetworkClientBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClientBase.connect">connect</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkClientBase.is_connected">is_connected</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer">NetworkServer</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer.accept">accept</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer.recv">recv</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer.send">send</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer.send_all">send_all</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServer.send_to">send_to</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase">NetworkServerBase</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase.bind">bind</a></li>
+<li class="toctree-l4"><a class="reference internal" href="py_mp.network.html#py_mp.network.NetworkServerBase.is_binded">is_binded</a></li>
 </ul>
 </li>
 </ul>
