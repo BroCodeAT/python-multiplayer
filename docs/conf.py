@@ -20,11 +20,29 @@ release = '0.1.2'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["sphinx.ext.autodoc", "numpydoc", "sphinx.ext.viewcode"]
+extensions = ["sphinx.ext.autodoc", "numpydoc", "sphinx.ext.viewcode", "autoapi.extension"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
+# -- Numpydoc configuration --------------------------------------------------
+
+autodoc_typehints = "none"  # NumpyDoc will do it for us. We just want to remove them from the signature too
+autodoc_preserve_defaults = True
+
+# -- AutoAPI configuration ---------------------------------------------------
+
+autoapi_root = "reference"
+autoapi_dirs = ["../src"]
+autoapi_ignore = ["__main__.py"]
+
+autoapi_options = ["members", "show-inheritance"]
+autoapi_template_dir = "_templates"
+
+autoapi_add_toctree_entry = False
+autoapi_add_objects_to_toctree = False
+autoapi_keep_files = True
+autoapi_member_order = "groupwise"
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
