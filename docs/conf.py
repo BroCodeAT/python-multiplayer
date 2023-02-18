@@ -33,7 +33,7 @@ autodoc_preserve_defaults = True
 # -- AutoAPI configuration ---------------------------------------------------
 
 autoapi_root = "reference"
-autoapi_dirs = ["../src"]
+autoapi_dirs = ["../src/py_mp"]
 autoapi_ignore = ["__main__.py"]
 
 autoapi_options = ["members", "show-inheritance"]
